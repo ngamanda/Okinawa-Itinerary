@@ -1,0 +1,13 @@
+.activityList ul {
+  font-size: 0.9em;
+  padding-left: 1em;
+  margin-bottom: 0;
+}
+
+.activityList li + li {
+  margin-top: 0.5em;
+}
+
+.activityList li > ul {
+  margin-top: 0.3em;
+}

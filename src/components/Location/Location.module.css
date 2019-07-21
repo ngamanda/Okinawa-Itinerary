@@ -1,0 +1,50 @@
+.container {
+  display: flex;
+  align-items: center;
+}
+
+.container + .container {
+  margin-top: 1em;
+  padding-top: 1em;
+  position: relative;
+}
+
+.container + .container:before {
+  content: " ";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  border-top: 1px solid #d7dfe3;
+}
+
+.imageHolder {
+  width: 80px;
+  height: 80px;
+  flex: 0 0 80px;
+  background-size: cover;
+  background-position: center center;
+  margin-right: 1em;
+}
+
+.tripAdvisorUrl,
+.tripAdvisorUrl:visited {
+  font-size: 0.9em;
+  display: block;
+  color: #00a680;
+  text-decoration: none;
+}
+
+.tripAdvisorUrl.name {
+  font-size: 1.1em;
+}
+
+.directionsUrl,
+.directionsUrl:visited {
+  display: block;
+  color: #7d97a4;
+  text-decoration: none;
+  margin-top: 1em;
+  font-size: 0.9em;
+  line-height: 1.3em;
+}

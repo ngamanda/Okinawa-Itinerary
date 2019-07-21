@@ -1,0 +1,26 @@
+@import "~normalize.css";
+
+html,
+body {
+  font-size: inherit;
+  font-weight: 400;
+  background-color: #f4f7fb;
+  font-family: "Montserrat", sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+.page {
+  margin: 0 auto;
+  max-width: 43rem;
+  border: 1px solid #d7dfe3;
+  background-color: #fff;
+}

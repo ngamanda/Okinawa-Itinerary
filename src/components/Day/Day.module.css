@@ -1,0 +1,35 @@
+.header {
+  padding: 1em 1em;
+  border-top: 1px solid #d7dfe3;
+  border-bottom: 1px solid #d7dfe3;
+  background-color: #fff;
+  box-sizing: border-box;
+  z-index: 999;
+}
+
+.header__title {
+  margin: 0;
+  font-size: 1em;
+  padding-left: 2em;
+  text-transform: none;
+  position: sticky;
+  display: flex;
+  justify-content: space-between;
+}
+
+.header__title__day {
+  font-weight: 700;
+  margin-right: 1em;
+  text-transform: uppercase;
+  display: inline-block;
+  min-width: 100px;
+}
+
+.header__location {
+  padding-right: 2em;
+}
+
+.content {
+  padding: 2em 1em;
+  background-color: #fafbfd;
+}
