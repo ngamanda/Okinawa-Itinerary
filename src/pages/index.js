@@ -65,6 +65,18 @@ const IndexPage = () => (
           </ul>
         </Activity>
 
+        <Activity title="San-A Naha Main Place">
+          <Location
+            image="https://media-cdn.tripadvisor.com/media/photo-s/12/50/3e/7b/photo1jpg.jpg"
+            directions="https://www.google.com/maps/place/San-A+Naha+Main+Place/@26.2079209,127.6858976,13.78z/data=!4m5!3m4!1s0x34e56bda1815ec15:0x19878b55152eae59!8m2!3d26.2256443!4d127.695076"
+            tripAdvisor="https://www.tripadvisor.com.sg/Attraction_Review-g298224-d8588179-Reviews-San_A_Naha_Main_Place-Naha_Okinawa_Prefecture.html"
+            address="4-4-9 Omoromachi, Naha 900-0006, Okinawa Prefecture"
+          />
+          <ul>
+            <li>Shopping mall with supermarket (Next to hotel)</li>
+          </ul>
+        </Activity>
+
         <Activity title="Naha Food" type="meals">
           <Location
             name="Ryukyu Sabo Ashibiuna (琉球茶房 あしびうなぁ)"
@@ -247,6 +259,18 @@ const IndexPage = () => (
             <li>~ S$17.51 per pax</li>
           </ul>
         </Activity>
+        <Activity title="American Village">
+          <Location
+            image="https://media-cdn.tripadvisor.com/media/photo-s/10/28/1c/0d/photo0jpg.jpg"
+            directions="https://www.google.com/maps/place/Ryukyu+Onsen+Senagajima+Hotel/@26.1835135,127.64275,13.78z/data=!4m8!3m7!1s0x34e5681ee85506ff:0x8c686fc36d94a9e0!5m2!4m1!1i2!8m2!3d26.176284!4d127.641466"
+            tripAdvisor="https://www.google.com/maps/place/American+Village/@26.3168555,127.755379,17z/data=!3m1!4b1!4m5!3m4!1s0x34e5130508159acd:0x1bde7c8b1d9e8bcc!8m2!3d26.3168555!4d127.7575677"
+            address="15-69 Mihama, Chatan-cho, Nakagami-gun 904-0115, Okinawa Prefecture"
+          />
+          <ul>
+            <li>East West fusion city</li>
+            <li>Tourist TRAP, don't buy souvenirs from here</li>
+          </ul>
+        </Activity>
       </Day>
 
       <Day date="2019-09-15" mainLocation="Tomigusuku">
@@ -274,6 +298,20 @@ const IndexPage = () => (
           />
           <ul>
             <li>440 yen / S$5.55 per pax</li>
+          </ul>
+        </Activity>
+
+        <Activity title="(Optional) Ryujin no Yu (琉球温泉 瀬長島ホテル)">
+          <Location
+            image="https://media-cdn.tripadvisor.com/media/photo-s/11/e7/b8/76/caption.jpg"
+            directions="https://www.google.com/maps/place/Ryukyu+Onsen+Senagajima+Hotel/@26.1835135,127.64275,13.78z/data=!4m8!3m7!1s0x34e5681ee85506ff:0x8c686fc36d94a9e0!5m2!4m1!1i2!8m2!3d26.176284!4d127.641466"
+            tripAdvisor="https://www.tripadvisor.com.sg/Attraction_Review-g1023467-d7238486-Reviews-Ryujin_no_Yu-Tomigusuku_Okinawa_Prefecture.html"
+            address="174-5 Senaga | Senagajima Hotel, Tomigusuku 901-0233, Okinawa Prefecture"
+          />
+          <ul>
+            <li>Onsen / Steam / Sauna</li>
+            <li>1330 yen / S$16.78 per pax</li>
+            <li>Refundable 100 yen locker, soaps all provided</li>
           </ul>
         </Activity>
       </Day>
