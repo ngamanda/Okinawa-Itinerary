@@ -10,4 +10,9 @@
 
 .activityList li > ul {
   margin-top: 0.3em;
+  opacity: 0.5;
+}
+
+.mapImage {
+  width: calc(100% - 1em);
 }

@@ -1,4 +1,7 @@
 import React from "react"
+import Img from "gatsby-image"
+import { graphql } from "gatsby"
+
 import Page from "@components/Page"
 import Banner from "@components/Banner"
 
@@ -8,12 +11,46 @@ import Location from "@components/Location"
 
 import styles from "./index.module.css"
 
-const IndexPage = () => (
+const IndexPage = ({ data }) => (
   <Page>
     <Banner />
     <div className={styles.activityList}>
       {/* DAY 1 */}
       <Day date="2019-09-12" mainLocation="Naha">
+        <Activity title="Map" type="map">
+          <Img
+            fluid={data.day1Image.childImageSharp.fluid}
+            className={styles.mapImage}
+          />
+          <ul>
+            <li>A: Naha Airport</li>
+            <li>
+              B: First Makishi Public Market
+              <ul>
+                <li>15 minutes drive from Airport</li>
+              </ul>
+            </li>
+            <li>
+              C: Shurijo Castle
+              <ul>
+                <li>15 minutes drive from Market</li>
+              </ul>
+            </li>
+            <li>
+              D: Okinawa World
+              <ul>
+                <li>30 minutes drive from Shurijo</li>
+              </ul>
+            </li>
+            <li>
+              E: Aguncha
+              <ul>
+                <li>30 minutes drive from Okinawa World</li>
+              </ul>
+            </li>
+          </ul>
+        </Activity>
+
         <Activity
           title="Flight to Okinawa"
           type="plane_departure"
@@ -29,15 +66,32 @@ const IndexPage = () => (
           <ul>
             <li>Customs clearance / Wash-up</li>
             <li>
-              Collect Rental Car
+              Collect Rental Car @ Naha Airport 1,{" "}
+              <a href="https://maps.google.fr/maps?q=26.2018075,127.66225029999998">
+                NISSAN PICK UP AGENCY
+              </a>
               <ul>
-                <li>Collection time: 9 am</li>
+                <li>Collection time: 10:00 am</li>
               </ul>
             </li>
           </ul>
         </Activity>
 
-        <Activity title="Shurijo Castle" timing="~ 1.5 hour visit">
+        <Activity title="Makishi Public Market" type="meals">
+          <Location
+            image="https://www.japan-guide.com/g17/7103_top.jpg"
+            directions="https://www.google.com/maps/place/First+Makishi+Public+Market/@26.2148454,127.6863398,17z/data=!3m1!4b1!4m5!3m4!1s0x34e569709a39d257:0x69fe9826555bc104!8m2!3d26.2148454!4d127.6885338"
+            tripAdvisor="https://www.tripadvisor.com.sg/Attraction_Review-g298224-d1372626-Reviews-Makishi_Public_Market-Naha_Okinawa_Prefecture.html"
+            address="2-10-1 Matsuo, Naha 900-0014, Okinawa Prefecture"
+          />
+          <ul>
+            <li>
+              Buy your seafood downstairs and get restaurants upstairs to cook
+            </li>
+          </ul>
+        </Activity>
+
+        <Activity title="Shurijo Castle" timing="60 - 90 Minutes">
           <Location
             image="https://www.japan-guide.com/g17/7103_top.jpg"
             directions="https://www.google.com/maps/place/Shurijo+Castle/@26.2170135,127.7173268,17z/data=!3m1!4b1!4m5!3m4!1s0x34e56bfe6cf4db67:0xc0899fbab29e4f8b!8m2!3d26.2170135!4d127.7195208"
@@ -45,6 +99,7 @@ const IndexPage = () => (
             address="Shuri, Naha 900-0000, Okinawa Prefecture"
           />
           <ul>
+            <li>Hours: 8:30 AM to 8:00 PM</li>
             <li>Shoes have to be taken off to go into the castle</li>
             <li>Price: 820 yen / ~S$10.35</li>
           </ul>
@@ -52,7 +107,7 @@ const IndexPage = () => (
 
         <Activity
           title="Okinawa World Culture Kingdom Gyokusendo"
-          timing="~ 2.5 hours visit"
+          timing="120 minutes"
         >
           <Location
             image="https://media-cdn.tripadvisor.com/media/photo-s/12/50/3e/7b/photo1jpg.jpg"
@@ -61,7 +116,12 @@ const IndexPage = () => (
             address="1336 Tamagusuku Maekawa, Nanjo 901-0616, Okinawa Prefecture"
           />
           <ul>
-            <li>Price: ~S$21.41 / pax</li>
+            <li>Hours: 9:00 AM to 5:00 PM</li>
+            <li>
+              Get 'Cave and Kingdom Village' ticket, don't need 'Habu Museum'
+            </li>
+            <li>Attire: Prepare for some water to drop on you</li>
+            <li>Price: 1,240 yen / ~S$16.48 (Only cash accepted)</li>
           </ul>
         </Activity>
 
@@ -154,18 +214,45 @@ const IndexPage = () => (
 
       {/* DAY 2 */}
       <Day date="2019-09-13" mainLocation="Motobu-cho">
-        <Activity
-          title="Hotel to Ocean Expo Park"
-          type="drive"
-          timing="~2 hours drive"
-        >
+        <Activity title="Map" type="map">
+          <Img
+            fluid={data.day2Image.childImageSharp.fluid}
+            className={styles.mapImage}
+          />
           <ul>
-            <li>OR drive to Airport and take the Shuttle to Ocean Expo Park</li>
-            <li>Shuttle takes ~2.5 hours</li>
+            <li>A: Hotel</li>
+            <li>
+              B: Cape Manzamo (2 hours drive)
+              <ul>
+                <li>40 minutes drive from Hotel</li>
+              </ul>
+            </li>
+            <li>
+              C: Michi no Eki Kyodo (Lunch)
+              <ul>
+                <li>30 minutes drive from Cape Manzamo</li>
+              </ul>
+            </li>
+            <li>
+              D: Okinawa Churaumi Aquarium
+              <ul>
+                <li>40 minutes drive from Lunch</li>
+              </ul>
+            </li>
+            <li>
+              E: AEON MALL Okinawa Rycom
+              <ul>
+                <li>1 hour 16 minutes minutes drive from Aquarium</li>
+              </ul>
+            </li>
           </ul>
         </Activity>
 
-        <Activity title="(Optional) Cape Mazamo" type="drive">
+        <Activity
+          title="(Optional) Cape Mazamo"
+          timing="30 - 60 minutes"
+          type="drive"
+        >
           <Location
             image="https://media-cdn.tripadvisor.com/media/photo-s/13/de/46/29/caption.jpg"
             directions="https://www.google.com/maps/place/Cape+Manzamo/@26.5049491,127.8479515,17z/data=!3m1!4b1!4m5!3m4!1s0x34e503788741a7f9:0xdfec3d6fcce75918!8m2!3d26.5049491!4d127.8501455"
@@ -177,7 +264,7 @@ const IndexPage = () => (
           </ul>
         </Activity>
 
-        <Activity title="Ocean Expo Park">
+        <Activity title="Ocean Expo Park" timing="3 - 4 hours">
           <Location
             image="https://media-cdn.tripadvisor.com/media/photo-s/01/67/24/99/caption.jpg"
             directions="https://www.google.com/maps/place/Ocean+Expo+Park/@26.7006666,127.8774322,17z/data=!4m5!3m4!1s0x34e4fbcb06b9af8d:0x9959600907c8bfc4!8m2!3d26.6913328!4d127.8777408"
@@ -185,17 +272,34 @@ const IndexPage = () => (
             address="424 Ishikawa, Motobu-cho, Kunigami-gun 905-0206, Okinawa Prefecture"
           />
           <ul>
-            <li>Tropical Dream Center</li>
-            <li>Oceanic Culture Center Planatarium</li>
-            <li>Dolphin Shows @ 11:00, 13:00, 14:30, 16:00</li>
+            <li>
+              Tropical Dream Center
+              <ul>
+                <li>Price: 760 yen / S$10</li>
+              </ul>
+            </li>
+            <li>
+              Oceanic Culture Center Planatarium
+              <ul>
+                <li>Price: 190 yen / S$3</li>
+              </ul>
+            </li>
+            <li>
+              Okinawa Churami Aquarium
+              <ul>
+                <li>Price: 1850 yen / S$25</li>
+              </ul>
+            </li>
             <li>Emerald Beach</li>
-            <li>Okinawa Churami Aquarium</li>
-            <li>Recommends sigt seeing bus</li>
-            <li>~ S$21.80 / pax</li>
+            <li>Dolphin Shows @ 11:00, 13:00, 14:30, 16:00</li>
+            <li>Recommends sight seeing bus</li>
           </ul>
         </Activity>
 
-        <Activity title="(Optional) Bise no Fukugi Tree Road">
+        <Activity
+          timing="20 minutes"
+          title="(Optional) Bise no Fukugi Tree Road"
+        >
           <Location
             image="https://media-cdn.tripadvisor.com/media/photo-s/11/c7/99/c3/bise-fukugi-tree-road.jpg"
             directions="https://www.google.com/maps/place/Bise+Fukugi+Tree+Lane/@26.7006666,127.8774322,17z/data=!3m1!4b1!4m5!3m4!1s0x34e4fa3bb2e83feb:0xa38ab5013a129a36!8m2!3d26.7006666!4d127.8796262"
@@ -245,9 +349,37 @@ const IndexPage = () => (
       </Day>
 
       <Day date="2019-09-14" mainLocation="Okinawa City">
+        <Activity title="Map" type="map">
+          <Img
+            fluid={data.day3Image.childImageSharp.fluid}
+            className={styles.mapImage}
+          />
+          <ul>
+            <li>A: Hotel</li>
+            <li>
+              B: Southeast Botanical Garden
+              <ul>
+                <li>30 minutes minutes drive from Hotel</li>
+              </ul>
+            </li>
+            <li>
+              C: American Village
+              <ul>
+                <li>20 minutes minutes drive from Garden</li>
+              </ul>
+            </li>
+            <li>
+              D: Kokusai Dori
+              <ul>
+                <li>30 minutes minutes drive from American Village</li>
+              </ul>
+            </li>
+          </ul>
+        </Activity>
+
         <Activity
           title="Southeast Botanical Gardens (東南植物楽園)"
-          timing="~2 hours"
+          timing="2 hours"
         >
           <Location
             image="https://media-cdn.tripadvisor.com/media/photo-s/12/9a/c8/77/4-5.jpg"
@@ -256,7 +388,7 @@ const IndexPage = () => (
             address="2146 Chibana, Okinawa City 904-2143, Okinawa Prefecture"
           />
           <ul>
-            <li>~ S$17.51 per pax</li>
+            <li>Price: 1,500 yen / S$20</li>
           </ul>
         </Activity>
         <Activity title="American Village">
@@ -268,15 +400,63 @@ const IndexPage = () => (
           />
           <ul>
             <li>East West fusion city</li>
-            <li>Tourist TRAP, don't buy souvenirs from here</li>
+            <li>Tourist Trap, don't buy souvenirs from here</li>
+          </ul>
+        </Activity>
+
+        <Activity title="Kokusai Dori" type="meals">
+          <Location
+            image="https://media-cdn.tripadvisor.com/media/photo-s/08/3a/47/07/international-street.jpg"
+            directions="https://www.google.com/maps/place/Kokusai+dori,+3+Chome-2+Makishi,+Naha,+Okinawa,+Japan/@26.2113402,127.6876805,16.5z/data=!4m5!3m4!1s0x34e5697a7b5968f5:0xd77e8a839d0e50e9!8m2!3d26.2139223!4d127.6878766"
+            tripAdvisor="https://www.tripadvisor.com.sg/Attraction_Review-g298224-d1373583-Reviews-Kokusaidori-Naha_Okinawa_Prefecture.html"
+            address="Matsuo | Around Makishi, Naha 900-0014, Okinawa Prefecture"
+          />
+          <ul>
+            <li>Best to visit at night, walk through the small alleys too</li>
           </ul>
         </Activity>
       </Day>
 
       <Day date="2019-09-15" mainLocation="Tomigusuku">
+        <Activity title="Map" type="map">
+          <Img
+            fluid={data.day4Image.childImageSharp.fluid}
+            className={styles.mapImage}
+          />
+          <ul>
+            <li>A: Hotel</li>
+            <li>
+              B: Former Japanese Navy Underground Headquarters
+              <ul>
+                <li>15 minutes minutes drive from Hotel</li>
+              </ul>
+            </li>
+            <li>
+              C: Okinawa Outlet Mall Ashibinaa
+              <ul>
+                <li>15 minutes minutes drive from Headquarters</li>
+              </ul>
+            </li>
+            <li>
+              D: Ryujin no Yu
+              <ul>
+                <li>10 minutes minutes drive from Outlet Mall</li>
+                <li>20 minutes minutes drive to Hotel</li>
+              </ul>
+            </li>
+            <li>
+              E: Naha Airport
+              <ul>
+                <li>10 minutes minutes drive from Onsen</li>
+                <li>15 minutes minutes drive from Hotel</li>
+              </ul>
+            </li>
+          </ul>
+        </Activity>
+
         <Activity
           title="Former Japanese Navy Underground Headquarters (旧海軍司令部壕)"
-          timing="~2 hours"
+          timing="2 hours"
         >
           <Location
             image="https://media-cdn.tripadvisor.com/media/photo-s/0d/03/9d/ec/caption.jpg"
@@ -285,7 +465,7 @@ const IndexPage = () => (
             address="236 Tomigusuku, Tomigusuku 901-0241, Okinawa Prefecture"
           />
           <ul>
-            <li>440 yen / S$5.55 per pax</li>
+            <li>440 yen / S$6 per pax</li>
           </ul>
         </Activity>
 
@@ -296,9 +476,6 @@ const IndexPage = () => (
             tripAdvisor="https://www.tripadvisor.com.sg/Attraction_Review-g1023467-d1449920-Reviews-Ashibina_Outlet_Mall-Tomigusuku_Okinawa_Prefecture.html"
             address="1-188 Toyosaki, Tomigusuku 901-0225, Okinawa Prefecture"
           />
-          <ul>
-            <li>440 yen / S$5.55 per pax</li>
-          </ul>
         </Activity>
 
         <Activity title="(Optional) Ryujin no Yu (琉球温泉 瀬長島ホテル)">
@@ -310,8 +487,20 @@ const IndexPage = () => (
           />
           <ul>
             <li>Onsen / Steam / Sauna</li>
-            <li>1330 yen / S$16.78 per pax</li>
+            <li>1330 yen / S$18</li>
             <li>Refundable 100 yen locker, soaps all provided</li>
+          </ul>
+        </Activity>
+
+        <Activity title="Return Rental Car" timing="8:00 PM">
+          <Location
+            image="https://media-cdn.tripadvisor.com/media/photo-s/11/53/f5/30/photo0jpg.jpg"
+            directions="https://www.google.com/maps/search/naha+airport/@26.2065408,127.646449,17z/data=!3m1!4b1"
+            tripAdvisor="https://www.tripadvisor.com.sg/Attraction_Review-g298224-d14027881-Reviews-Naha_Airport_Station-Naha_Okinawa_Prefecture.html"
+            address="938-5 Kagamizu, Naha 901-0142, Okinawa Prefecture"
+          />
+          <ul>
+            <li>Naha Airport</li>
           </ul>
         </Activity>
       </Day>
@@ -320,10 +509,11 @@ const IndexPage = () => (
         <Activity
           title="Depart for Naha Airport"
           type="drive"
-          timing="7:00 am - 7:30 am"
+          timing="40 minutes"
         >
           <ul>
-            <li>May have traffic jam</li>
+            <li>Take the Yui Rail to the Airport</li>
+            <li>Price: 300 yen / S$4</li>
           </ul>
         </Activity>
         <Activity title="Airport R &amp; R">
@@ -348,3 +538,36 @@ const IndexPage = () => (
 )
 
 export default IndexPage
+
+export const query = graphql`
+  query {
+    day1Image: file(relativePath: { eq: "day-1.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 400) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    day2Image: file(relativePath: { eq: "day-2.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 400) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    day3Image: file(relativePath: { eq: "day-3.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 400) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    day4Image: file(relativePath: { eq: "day-4.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 400) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+  }
+`

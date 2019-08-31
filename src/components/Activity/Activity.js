@@ -8,6 +8,7 @@ import {
   faPlaneDeparture,
   faUtensils,
   faCar,
+  faMap,
 } from "@fortawesome/free-solid-svg-icons"
 
 import styles from "./Activity.module.css"
@@ -22,6 +23,8 @@ const fetchIcon = type => {
       return faUtensils
     case "drive":
       return faCar
+    case "map":
+      return faMap
     default:
       return faCalendarDay
   }
