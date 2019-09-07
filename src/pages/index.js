@@ -537,28 +537,28 @@ export const query = graphql`
     day1Image: file(relativePath: { eq: "day-1.png" }) {
       childImageSharp {
         fluid(maxWidth: 800) {
-          ...GatsbyImageSharpFluid
+          ...GatsbyImageSharpFluid_withWebp_tracedSVG
         }
       }
     }
     day2Image: file(relativePath: { eq: "day-2.png" }) {
       childImageSharp {
         fluid(maxWidth: 800) {
-          ...GatsbyImageSharpFluid
+          ...GatsbyImageSharpFluid_withWebp_tracedSVG
         }
       }
     }
     day3Image: file(relativePath: { eq: "day-3.png" }) {
       childImageSharp {
         fluid(maxWidth: 800) {
-          ...GatsbyImageSharpFluid
+          ...GatsbyImageSharpFluid_withWebp_tracedSVG
         }
       }
     }
     day4Image: file(relativePath: { eq: "day-4.png" }) {
       childImageSharp {
         fluid(maxWidth: 800) {
-          ...GatsbyImageSharpFluid
+          ...GatsbyImageSharpFluid_withWebp_tracedSVG
         }
       }
     }
