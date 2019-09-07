@@ -12,7 +12,7 @@ const Location = props => {
   return (
     <div className={styles.container}>
       {image && (
-        <a target="_blank" href={tripAdvisor}>
+        <a target="_blank" rel="noopener noreferrer" href={tripAdvisor}>
           <div
             className={styles.imageHolder}
             style={{ backgroundImage: `url(${image})` }}
@@ -24,6 +24,7 @@ const Location = props => {
         {tripAdvisor && (
           <a
             target="_blank"
+            rel="noopener noreferrer"
             href={tripAdvisor}
             className={`${styles.tripAdvisorUrl} ${!image &&
               name &&
@@ -33,7 +34,12 @@ const Location = props => {
           </a>
         )}
         {address && (
-          <a target="_blank" href={directions} className={styles.directionsUrl}>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href={directions}
+            className={styles.directionsUrl}
+          >
             <FontAwesomeIcon icon={faMapMarkerAlt} /> {address}
           </a>
         )}
